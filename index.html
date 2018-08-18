@@ -1,0 +1,15 @@
+<html>
+<head>
+  <meta charsrt="utf-8">
+</head>
+<body>
+</body>
+<button name="socket-test" onclick="testWebSocketConnection()">Test Connection</button>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost:3000');
+  function testWebSocketConnection(){
+    socket.emit('message','connection test');
+  }
+</script>
+<html>
