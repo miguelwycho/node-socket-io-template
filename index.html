@@ -1,15 +1,44 @@
 <html>
+
 <head>
   <meta charsrt="utf-8">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="navbar">
+    <ul>
+      <li>
+        Equipe
+      </li>
+      <li>
+        Contatos
+      </li>
+      <li>
+        Fotos
+      </li>
+      <li>
+        Teste
+      </li>
+    </ul>
+  </div>
+  <div class="team-container">
+
+    <div class="team-picture">
+
+    </div>
+    <div class="team-picture">
+
+    </div>
+    <div class="team-picture">
+    </div>
+  </div>
 </body>
-<button name="socket-test" onclick="testWebSocketConnection()">Test Connection</button>
 <script src="http://localhost:3000/socket.io/socket.io.js"></script>
 <script>
   var socket = io('http://localhost:3000');
-  function testWebSocketConnection(){
-    socket.emit('message','connection test');
+  function testWebSocketConnection() {
+    socket.emit('message', 'connection test');
   }
 </script>
 <html>
