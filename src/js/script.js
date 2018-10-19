@@ -138,6 +138,7 @@ function navigate(page) {
             document.getElementById('team').style.opacity = '0';
             document.getElementById('home-li').style.color = 'black';
             document.getElementById('fun').style.display = 'none';
+            getRobocupImages();
             break;
         case 3:
             document.getElementById('team').style.display = 'none';
@@ -230,6 +231,11 @@ $('#next').click(function () {
 
 function getUsers() {
     socket.emit('fetch_user')
+    socket.emit('fetch_team_images');
+  }
+
+  function getRobocupImages() {
+    socket.emit('fetch_robocup_images')
   }
 
 

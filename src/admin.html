@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/admin.css" />
+    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+</head>
+
+<body>
+    <div class="notification-message" id="notification">
+        <i class="fas fa-check notification-success"></i>
+        <div class="notification-icon"></div>
+        <span class="message-sent">Dados Salvos!</span>
+    </div>
+    <nav class="side-bar">
+        <h1 class="h1-admin">Administrador</h1>
+    </nav>
+
+    <div class="team-info">
+        <h1 class="team-data">Dados da Equipe</h1>
+        <form class="form-update">
+            <input placeholder="Nome" name="name" id="name1">
+            <br />
+            <input placeholder="Cidade" name="city" id="city1">
+            <br />
+            <input placeholder="Ocupação" name="position" id="position1">
+            <br />
+            <input placeholder="Idade" name="name" id="age1">
+            <br />
+            <input type="button" value="Salvar" onclick="update(1)">
+        </form>
+        <form class="form-update" action="update(2)">
+            <input placeholder="Nome" name="name2" id="name2">
+            <br />
+            <input placeholder="Cidade" name="city2" id="city2">
+            <br />
+            <input placeholder="Ocupação" name="position2" id="position2">
+            <br />
+            <input placeholder="Idade" name="age2" id="age2">
+            <br />
+            <input type="button" value="Salvar" onclick="update(2)">
+        </form>
+        <form class="form-update">
+            <input placeholder="Nome" name="name3" id="name3">
+            <br />
+            <input placeholder="Cidade" name="email3" id="city3">
+            <br />
+            <input placeholder="Ocupação" name="position3" id="position3">
+            <br />
+            <input placeholder="Idade" name="age3" id="age3">
+            <br />
+            <input type="button" value="Salvar" onclick="update(2)">
+        </form>
+    </div>
+
+    <div class="images">
+        <form action="admin" method="post" enctype="multipart/form-data">
+            <input type="file" name="file1"><br>
+            <input type="file" name="file2"><br>
+            <input type="file" name="file3"><br>
+            <input type="file" name="file4"><br>
+            <input type="file" name="file5"><br>
+            <input type="file" name="file6"><br>
+            <input type="file" name="file7"><br>
+            <input type="submit">
+        </form>
+    </div>
+
+</body>
+<script src="http://localhost:5000/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect('http://localhost:5000');
+    socket.emit("fetch_user");
+
+    socket.on("user", function (users) {
+        document.getElementById("name1").value = users[0].name
+        document.getElementById("city1").value = users[0].city
+        document.getElementById("age1").value = users[0].age
+        document.getElementById("position1").value = users[0].position
+
+        document.getElementById("name2").value = users[1].name
+        document.getElementById("city2").value = users[1].city
+        document.getElementById("age2").value = users[1].age
+        document.getElementById("position2").value = users[1].position
+
+        document.getElementById("name3").value = users[2].name
+        document.getElementById("city3").value = users[2].city
+        document.getElementById("age3").value = users[2].age
+        document.getElementById("position3").value = users[2].position
+    })
+
+    function update(teamNumber) {
+        let message = {
+            name: document.getElementById("name" + teamNumber).value,
+            city: document.getElementById("city" + teamNumber).value,
+            age: document.getElementById("age" + teamNumber).value,
+            position: document.getElementById("position" + teamNumber).value,
+            idteam_info: teamNumber
+
+        }
+        socket.emit("update", message)
+        document.getElementById('notification').style.top = '160px';
+        document.getElementById('notification').style.opacity = '1';
+        setTimeout(() => {
+            document.getElementById('notification').style.top = '0';
+            document.getElementById('notification').style.opacity = '0';
+        }, 3000);
+        socket.emit("fetch_user");
+    }
+</script>
+
+</html>
