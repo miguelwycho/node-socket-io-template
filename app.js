@@ -41,6 +41,19 @@ io.on('connection', function (socket) {
       io.emit('user',res);
     });
   })
+
+
+  socket.on('update' , function(message){
+    let params = [];
+    params.push(message.name);
+    params.push(message.city);
+    params.push(message.age);
+    params.push(message.position);
+    params.push(message.idteam_info);
+    con.query("update zorbao.team_info set name =?,city =?,age=?,position=? where idteam_info =?;",params, function (error,res) {
+      if (error) throw error;
+    });
+  })
   
 
 })
