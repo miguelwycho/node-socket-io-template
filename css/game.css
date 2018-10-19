@@ -1,0 +1,66 @@
+#fun{
+    display:none;
+}
+
+canvas {
+    margin: 10% 35%;
+    border: 1px solid #d3d3d3;
+    /* background-color: #838383; */
+    width:600px;
+    height:600px;
+    border-radius:3px;
+}
+#game  { 
+    background-image: url("../images/r.jpg"); 
+    background-size: cover;
+}
+
+.start-screen{
+    border-radius:3px;
+    width:600px;
+    height:600px;
+    background:rgb(9, 22, 25);
+    margin: 10% 35%;
+    text-align: center;
+    line-height:600px;
+}
+.game-logo{
+    position: absolute;
+    margin-left:-75px;
+    margin-top:80px;
+}
+
+.btn-start{
+    width:200px;
+    height:70px;
+    color:white;
+    cursor:pointer;
+    font-family:'Roboto';
+    vertical-align:middle;
+    margin-top:400px;
+    border: thick solid white;
+    background:  transparent;
+
+}
+
+#counter{
+    position:absolute;
+    color:rgb(255, 255, 255);
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size:26px;
+    margin-left:950px;
+    margin-top:-780px;
+}
+
+.bike1,.bike2,.bike3{
+    position: absolute;
+    margin-top:200px;
+}
+
+.bike2{
+    margin-left:80px;;
+}
+.bike3{
+    margin-left:150px;;
+}
