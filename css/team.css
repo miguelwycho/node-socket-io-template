@@ -1,0 +1,127 @@
+
+.team-container{
+    opacity:0.5;
+    display: none;
+    position: relative;
+    width:65em;
+    margin:280px auto;
+    transition:all .5s;
+}
+
+.team-picture{
+    z-index: 4  ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    transition:filter .3s;
+    box-shadow: 0px 0px 2px 1px rgba(133,133,133,1);
+    position: relative;
+    height:23em;
+    width:20em;
+    border:medium double rgb(155, 155, 155);
+}
+
+.span-team-name{
+    position: relative;
+   top:5%;
+    color:gray;
+    font-family: sans-serif;
+    font-size:24px;
+}
+
+.team-image{
+    z-index: 5;
+    max-width: 100%;
+    max-height: 100%;
+    height:25em;
+    width:20em;
+}
+
+.span-team-info{
+    z-index: 4  ;
+    position: absolute;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+    perspective: 1000px;
+    float: left;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+    height:25em;
+    width:20em;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+    transform: rotateY(0deg);
+    /* background:transparent; */
+
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+.team-info{
+    font-size:24px;
+    color:rgb(252, 178, 40);
+    font-family: Exo;
+    position: relative;
+    top:120px;
+}
+
+.first-back,.second-back,.third-back{
+    box-shadow: 0px 0px 2px 1px rgba(133,133,133,1);
+    position: relative;
+    height:25em;
+    width:20em;
+    text-align: center;
+}
+
+.margin-left{
+    margin-left:40px;
+}
+
+.info-container{
+    position: relative;
+    top:130px;
+
+}
+
+.span-info{
+    color:gray;
+    font-family: Exo;
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.pic1{
+    background-image: url("/images/miguel.png");
+    display:block;
+}
