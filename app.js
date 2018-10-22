@@ -27,7 +27,8 @@ app.post('/admin', function (req, res) {
     fileArray.forEach(element => {
       if (element.name != '') {
         var oldpath = element.path;
-        var newpath = __dirname + "/src/images/robo-cup/" + element.name;
+        // var newpath = __dirname + "/src/images/robo-cup/" + element.name;
+        var newpath = __dirname + "/src/images/robo-cup/" + fileArray.indexOf(element) + '.png';
         // fs.writeFile(__dirname + "/src/images/" + element.name, element, 'binary', function (err, result) {
         // })
         fs.rename(oldpath, newpath, function (err) {
@@ -100,7 +101,7 @@ io.on('connection', function (socket) {
       });
     }
   })
-
+-
   socket.on('fetch_robocup_images', function () {
     fs.readdir(__dirname + '/src/images/robo-cup', function (err, items) {
       for (let x = 0;x < items.length; x++) {

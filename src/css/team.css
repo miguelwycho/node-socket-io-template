@@ -17,8 +17,8 @@
     transition:filter .3s;
     box-shadow: 0px 0px 2px 1px rgba(133,133,133,1);
     position: relative;
-    height:23em;
-    width:20em;
+     height:23em;
+     width:20em; 
     border:medium double rgb(155, 155, 155);
 }
 
@@ -50,7 +50,7 @@
 }
 	/* flip the pane when hovered */
 	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
+        transform: rotateY(180deg);
 	}
 
 .flip-container, .front, .back {
@@ -62,7 +62,6 @@
 .flipper {
 	transition: 0.6s;
 	transform-style: preserve-3d;
-
 	position: relative;
 }
 
@@ -71,7 +70,7 @@
 	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
-	left: 0;
+    left: 0;
 }
 
 /* front pane, placed above back */

@@ -44,8 +44,18 @@
 
   <!-- HOME PAGE (SPA)-->
   <div class="home-container" id="home">
+    <div style="margin-top:10%;margin-left:100px;">
+      <p class="home-phrase">Inspirados pela tecnologia</p>
+      <div class="line">
+      </div>
+      <!-- <p>Apaixonados por tecnologia e inovação</p><span class="bar">|</span></p> -->
+        <img src="images/zorbao.png" class="logo-zorbao">
 
-    <img class="home-image" src="images/zorbao.png">
+
+      <p class="home-phrase align-right">Desafiados pelo saber</p>
+      <div class="line align-right">
+      </div>
+    </div>
   </div>
 
 
@@ -116,15 +126,20 @@
 
 
   <!-- CONTACT PAGE (SPA)-->
-  <div class="contact-form" id="contact">
-    <span class="contact-text">FALE CONOSCO</span><br />
-    <input class="input-name" id="input-name" type="text" placeholder="Nome"><br />
-    <input class="input-email" id="input-email" type="text" placeholder="E-mail"><br />
-    <textarea class="text-message" id="text-message" type="text" placeholder="Mensagem"></textarea><br />
-    <button class="btn-send" onclick="sendMessage()">Enviar</button>
+  <div id="contact">
+    <div class="contact-form">
+      <label class="contact-text">FALE CONOSCO</label><br />
+        <input class="input-name" name="name" id="input-name" type="text" placeholder="Nome"><br />
+        <input class="input-email" id="input-email" type="text" placeholder="E-mail"><br />
+        <textarea class="text-message" id="text-message" type="text" placeholder="Mensagem"></textarea><br />
+        <button class="btn-send" onclick="sendMessage()">Enviar</button>
+    </div>
     <div class="headerDivider"></div>
-    <p class="address-info">Rua dos Programadores, 217,<br /> Sao Paulo<br />(011)99699-3606
-    </p>
+
+
+    <img class="location" src="images/contact/location.png">
+    <!-- <p class="address-info">Rua dos Programadores, 217,<br /> Sao Paulo<br />(011)99699-3606
+    </p> -->
   </div>
 
   <!-- PHOTOS PAGE(SPA) -->

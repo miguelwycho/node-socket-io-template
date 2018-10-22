@@ -1,0 +1,4 @@
+1 - Abra o projeto e de no terminal 'npm install' para instalar as dependencias
+2 - Com as dependencias instaladas escreva 'node app.js' no terminal e de enter
+2 - Acesso a aplicao em localhost:5000
+3 - A pagina de administracao pode ser acessada em localhost:5000/admin

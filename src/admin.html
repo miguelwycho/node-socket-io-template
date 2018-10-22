@@ -21,9 +21,11 @@
         <span class="message-sent">Dados Salvos!</span>
     </div>
     <nav class="side-bar">
-        <h1 class="h1-admin">Administrador</h1>
+        <img class="admin-logo" src="images/sm.png" alt="logo">
+        <i class="fas fa-sign-out-alt icon" onclick="navigateBack()"></i>
     </nav>
-
+    <nav class="footer">
+    </nav>
     <div class="team-info">
         <h1 class="team-data">Dados da Equipe</h1>
         <form class="form-update">
@@ -35,7 +37,7 @@
             <br />
             <input placeholder="Idade" name="name" id="age1">
             <br />
-            <input type="button" value="Salvar" onclick="update(1)">
+            <input type="button" class="btn-update" value="Salvar" onclick="update(1)">
         </form>
         <form class="form-update" action="update(2)">
             <input placeholder="Nome" name="name2" id="name2">
@@ -46,7 +48,7 @@
             <br />
             <input placeholder="Idade" name="age2" id="age2">
             <br />
-            <input type="button" value="Salvar" onclick="update(2)">
+            <input type="button" class="btn-update" value="Salvar" onclick="update(2)">
         </form>
         <form class="form-update">
             <input placeholder="Nome" name="name3" id="name3">
@@ -57,10 +59,10 @@
             <br />
             <input placeholder="Idade" name="age3" id="age3">
             <br />
-            <input type="button" value="Salvar" onclick="update(2)">
+            <input type="button" class="btn-update" value="Salvar" onclick="update(2)">
         </form>
     </div>
-
+    <h1 class="team-data">Imagens</h1>
     <div class="images">
         <form action="admin" method="post" enctype="multipart/form-data">
             <input type="file" name="file1"><br>
@@ -70,7 +72,7 @@
             <input type="file" name="file5"><br>
             <input type="file" name="file6"><br>
             <input type="file" name="file7"><br>
-            <input type="submit">
+            <input type="submit" class="btn-update">
         </form>
     </div>
 
@@ -114,6 +116,12 @@
             document.getElementById('notification').style.opacity = '0';
         }, 3000);
         socket.emit("fetch_user");
+    }
+
+    function navigateBack(callback) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", '/', true); // true for asynchronous 
+        xmlHttp.send(null);
     }
 </script>
 

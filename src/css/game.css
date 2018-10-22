@@ -3,11 +3,12 @@
 }
 
 canvas {
-    margin: 10% 35%;
+    position:relative;
+    margin: 12% 35%;
     border: 1px solid #d3d3d3;
     /* background-color: #838383; */
-    width:600px;
-    height:600px;
+    width:35%;
+    height:65%;
     border-radius:3px;
 }
 #game  { 
@@ -17,10 +18,10 @@ canvas {
 
 .start-screen{
     border-radius:3px;
-    width:600px;
-    height:600px;
+    width:35%;
+    height:65%;
     background:rgb(9, 22, 25);
-    margin: 10% 35%;
+    margin: 12% 35%;
     text-align: center;
     line-height:600px;
 }
